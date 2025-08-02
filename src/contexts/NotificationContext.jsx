@@ -1,0 +1,3 @@
+// ...파일 내용 그대로...
+
+export default NotificationProvider   // ← 마지막 줄 추가
