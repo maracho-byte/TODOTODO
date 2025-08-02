@@ -1,51 +1,28 @@
-import React, { useState } from 'react'
-import Header from './components/Header'
-import TaskForm from './components/TaskForm'
-import FilterBar from './components/FilterBar'
-import TaskList from './components/TaskList'
-import TaskStats from './components/TaskStats'
-import CalendarView from './components/CalendarView'
-import { useTheme } from './contexts/ThemeContext'
-
+import React from 'react'
+import './App.css'
 function App() {
-  const { theme } = useTheme()
-  const [currentView, setCurrentView] = useState('list') // 'list' or 'calendar'
-
   return (
-    <div className={`app ${theme}`}>
-      <div className="container">
-        <Header />
-        <TaskStats />
-        
-        {/* 뷰 전환 버튼 */}
-        <div className="view-toggle" style={{ marginBottom: '2rem' }}>
-          <button 
-            className={`btn ${currentView === 'list' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setCurrentView('list')}
-          >
-            List View
-          </button>
-          <button 
-            className={`btn ${currentView === 'calendar' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setCurrentView('calendar')}
-          >
-            Calendar View
-          </button>
-        </div>
-
-        <TaskForm />
-        
-        {currentView === 'list' ? (
-          <>
-            <FilterBar />
-            <TaskList />
-          </>
-        ) : (
-          <CalendarView />
-        )}
-      </div>
+    <div style={{
+      padding: '2rem',
+      textAlign: 'center',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <h1>🎉 TODOTODO App</h1>
+      <p>앱이 성공적으로 배포되었습니다!</p>
+      <button
+        style={{
+          padding: '1rem 2rem',
+          backgroundColor: '#3b82f6',
+          color: 'white',
+          border: 'none',
+          borderRadius: '0.5rem',
+          cursor: 'pointer'
+        }}
+        onClick={() => alert('버튼이 작동합니다!')}
+      >
+        테스트 버튼
+      </button>
     </div>
   )
 }
-
 export default App
